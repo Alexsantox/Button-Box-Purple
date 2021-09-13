@@ -1,0 +1,59 @@
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Deixar botão no centro da tela*/
+}
+
+.container {
+    width: 75px; /*Definindo tamanho da largura do botão*/
+    height: 40px; /*Definindo tamanho da altura do botão*/
+    background: #212221; /*Criando cor no fundo do botão*/
+    background: linear-gradient(to right, #4a00e0, #8e2de2); /*Definindo a cor do botão com degradê*/
+    border-radius: 50px; /*Deixando o botão arredondado*/
+    position: relative;
+}
+
+.container input { /*Personalizando o botão pequeno central*/
+    position: absolute;
+    width: 100%; /*Definindo a posição largura*/
+    height: 100%; /*Definindo tamanho do botão pequeno central*/
+    cursor: pointer; /*Definindo qual o icone do cursor ao passar o mouse sobre botão*/
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.container input::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85%;
+    height: 70%;
+    background: rgb(255, 255, 255);
+    border-radius: 50px;
+}
+
+.container input::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translate(7px, -50%);
+    width: 25px;
+    height: 25px;
+    background: linear-gradient(to right, #4a00e0, #8e2de2);
+    opacity: 0.4;
+    border-radius: 50px;
+    transition: all 0.4s;
+}
+
+.container input:checked::after {
+    transform: translate(170%, -50%);
+    opacity: 1;
+}
